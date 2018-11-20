@@ -304,7 +304,7 @@
             }
         },
         {
-			
+			"condition": "[equals(parameters('vNetNewOrExisting'), 'new')]",
             "apiVersion": "[variables('apiVersion')]",
             "type": "Microsoft.Network/virtualNetworks",
             "name": "[parameters('virtualNetworkName')]",
