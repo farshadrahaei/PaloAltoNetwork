@@ -1,0 +1,81 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "location": {
+      "value": "eastus2"
+    },
+    "newStorageAccount": {
+      "value": "storagename"
+    },
+    "storageAccountType": {
+      "value": "Premium_LRS"
+    },
+    "storageAccountNewOrExisting": {
+      "value": "new"
+    },
+    "existingStorageAccountRG": {
+      "value": "existing-resource-group-name"
+    },
+    "dnsNameForPublicIP": {
+      "value": "firewalldnsname"
+    },
+    "vmName": {
+      "value": "PaloAlto-FW"
+    },
+    "adminUserName": {
+      "value": "user"
+    },
+    "adminPassword": {
+      "value": "djksehn@#$d90nsdfr"
+    },
+    "authenticationType": {
+      "value": "password"
+    },
+	"sshkey": {
+		"value": "null"
+	},
+    "vmSize": {
+      "value": "Standard_DS3_v2"
+    },
+    "srcIPInboundNSG": {
+      "value": "null"
+    },
+    "baseUrl": {
+      "value": "https://raw.githubusercontent.com/farshadrahaei/PaloAltoNetwork/master"
+    },
+    "virtualNetworkName": {
+      "value": "Virtualnetwork"
+    },
+    "virtualNetworkAddressPrefix": {
+      "value": "10.10.10.0/24"
+    },
+    "subnet0Name": {
+      "value": "PAN-Management"
+    },
+    "subnet1Name": {
+      "value": "PAN-Untrust"
+    },
+    "subnet2Name": {
+      "value": "PAN-Trust"
+    },
+    "subnet0Prefix": {
+      "value": "10.10.10.0/28"
+    },
+    "subnet1Prefix": {
+      "value": "10.10.10.16/28"
+    },
+    "subnet2Prefix": {
+      "value": "10.10.10.32/28"
+    },
+    "subnet0StartAddress": {
+      "value": "10.10.10.7"
+    },
+    "subnet1StartAddress": {
+      "value": "10.10.10.23"
+    },
+    "subnet2StartAddress": {
+      "value": "10.10.10.39"
+    }
+  }
+}
