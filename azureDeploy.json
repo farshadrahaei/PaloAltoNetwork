@@ -101,7 +101,7 @@
             "metadata": {
                 "artifactsBaseUrl": ""
             },
-            "defaultValue": "https://raw.githubusercontent.com/farshadrahaei/PaloAltoNetwork/master"
+            "defaultValue": "https://raw.githubusercontent.com/farshadrahaei/PaloAltoNetworks/master"
         },
         "vNetNewOrExisting": {
             "type": "string",
