@@ -1,6 +1,6 @@
 # PaloAlto Network Firewall deployement in Azure Cloud
-# Existing Virtual Network
-Palo Alto firewall deployment in Azure(fixed installing firewall in existing Azure virtual Network)
+# Fixed deplyment in existing Azure Virtual Network (V-NET)
+Deploying Palo Alto firewall on existing Azure virtual Network(V-NET)
 In order to use this script you will need to have existing Azure Virtual Network(V-NET) and 3 Subnets.
 Keep in mind to add security group to restrict access to your public PAN-Management subnet.
 
