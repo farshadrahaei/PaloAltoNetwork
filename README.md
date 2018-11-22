@@ -1,6 +1,8 @@
 # PaloAlto Networks Firewall deployement in Azure Cloud
 # Fixed deplyment in existing Azure Virtual Network (V-NET)
-Script by: Farshad Rahaei
+Script by: <a href="https://www.linkedin.com/in/farshadrahaei">Farshad Rahaei</a>
+
+
 
 Deploying Palo Alto firewall on existing Azure virtual Network(V-NET), with addition of Premium_LRS SSD storage and Standard_DS3_v2 vm size.
 In order to use this script you will need to have existing Azure Virtual Network(V-NET) and 3 Subnets.
