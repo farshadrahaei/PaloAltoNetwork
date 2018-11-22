@@ -1,5 +1,4 @@
-# PaloAlto Networks Firewall deployement in Azure Cloud
-# Fixed deplyment in existing Azure Virtual Network (V-NET)
+# PaloAlto Firewall, Fix deployment in existing Azure Virtual Network (V-NET)
 Script by: <a href="https://www.linkedin.com/in/farshadrahaei">Farshad Rahaei</a>
 
 
