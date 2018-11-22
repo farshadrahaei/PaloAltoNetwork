@@ -29,3 +29,5 @@ Notes:
 
 - CLI: `azure vm show  -g YourResourceGroupName  -n YourDeploymentLabel`
 - Azure Portal: Your Resource Group > Deployment or Alert Logs
+
+Script by: Farshad Rahaei
