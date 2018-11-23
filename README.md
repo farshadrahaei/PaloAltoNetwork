@@ -4,6 +4,7 @@ Script by: <a href="https://www.linkedin.com/in/farshadrahaei">Farshad Rahaei</a
 
 
 Use this script to deploy Palo Alto firewall on existing Azure cloud virtual Network(V-NET), with addition of Premium_LRS SSD storage and Standard_DS3_v2 vm size.
+
 In order to use this script you will need to have existing Azure Virtual Network(V-NET) and 3 Subnets for management, untrust and trust security zones.
 
 Notes:
@@ -15,9 +16,10 @@ How to use this script:
 # First Method:
 # Using Azure Deployment Manager
 
-Click on bellow button to redirect to azure cloud and use this script for deployemnt.
+Click on bellow button to redirect to azure cloud website and use this script for your deployemnt.
 
 [<img src="http://azuredeploy.net/deploybutton.png"/>](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Ffarshadrahaei%2FPaloAltoNetworks%2Fmaster%2FazureDeploy.json)
+
 
 
 # Second Method:
