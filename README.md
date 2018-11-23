@@ -12,12 +12,16 @@ Notes:
  
 How to use this script:
 
-# First Method, Azure DEployment Manager:
+# First Method:
+# Using Azure Deployment Manager
 
 Click on bellow button to redirect to azure cloud and use this script for deployemnt.
+
 [<img src="http://azuredeploy.net/deploybutton.png"/>](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Ffarshadrahaei%2FPaloAltoNetworks%2Fmaster%2FazureDeploy.json)
 
-# Second Method, deploy ARM Template using Azure CLI in ARM mode:
+
+# Second Method:
+# Deploy ARM Template using Azure CLI in ARM mode
 
 1. Download the two JSON files: azureDeploy.json and azureDeploy.parameters.json
 2. Customize the azureDeploy.parameters.json file and then deploy it from your computer.
