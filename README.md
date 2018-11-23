@@ -1,4 +1,4 @@
-# PaloAlto firewall, fix deployment in existing AZURE cloud Virtual Network(V-NET)
+# PaloAlto firewall, automation script to fix deployment in existing Azure Cloud Virtual Network(V-NET)
 Script by: <a href="https://www.linkedin.com/in/farshadrahaei">Farshad Rahaei</a>
 
 
