@@ -241,7 +241,7 @@
         "imagePublisher": "paloaltonetworks",
         "imageSku": "byol",
         "imageOffer": "vmseries1",
-        "fwpublicIPName": "[concat(parameters('vmName'), '-fwMgmtPublicIP')]",
+        "fwpublicIPName": "[concat(parameters('vmName'), '-ManagementPublicIP')]",
         "nicName": "[concat(parameters('vmName'), '-eth')]",
 		"FWPrivateIPAddressManagement": "[parameters('subnet0StartAddress')]",
         "FWPrivateIPAddressTrust": "[parameters('subnet1StartAddress')]",
@@ -255,7 +255,6 @@
         "subnet1Ref": "[concat(variables('vnetID'),'/subnets/',parameters('subnet1Name'))]",
         "subnet2Ref": "[concat(variables('vnetID'),'/subnets/',parameters('subnet2Name'))]",
 		"subnet3Ref": "[concat(variables('vnetID'),'/subnets/',parameters('subnet3Name'))]",
-		"subnet4Ref": "[concat(variables('vnetID'),'/subnets/',parameters('subnet4Name'))]",
 		"subnet4Ref": "[concat(variables('vnetID'),'/subnets/',parameters('subnet4Name'))]",
 		
         "storageAccountSetupURL": "[concat(parameters('baseUrl'),'/storageAccount-',parameters('storageAccountNewOrExisting'),'.json')]",
