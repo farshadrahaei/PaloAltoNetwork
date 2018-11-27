@@ -245,7 +245,7 @@
         "nicName": "[concat(parameters('vmName'), '-eth')]",
 		"FWPrivateIPAddressManagement": "[parameters('subnet0StartAddress')]",
         "FWPrivateIPAddressTrust": "[parameters('subnet1StartAddress')]",
-        "FWPrivateIPAddressUnrust1": "[parameters('subnet2StartAddress')]",
+        "FWPrivateIPAddressUntrust1": "[parameters('subnet2StartAddress')]",
 		"FWPrivateIPAddressUntrust2": "[parameters('subnet3StartAddress')]",
 	    "FWPrivateIPAddressUntrust3": "[parameters('subnet4StartAddress')]",
         "publicIPAddressType": "Dynamic",
