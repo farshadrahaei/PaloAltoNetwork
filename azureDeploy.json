@@ -102,7 +102,7 @@
             "metadata": {
                 "artifactsBaseUrl": ""
             },
-            "defaultValue": "https://raw.githubusercontent.com/farshadrahaei/PaloAlto-multi-public-interface/master"
+            "defaultValue": "https://raw.githubusercontent.com/farshadrahaei/PaloAltoNetworks/multi-public-interface"
         },
         "vNetNewOrExisting": {
             "type": "string",
@@ -255,6 +255,7 @@
         "subnet1Ref": "[concat(variables('vnetID'),'/subnets/',parameters('subnet1Name'))]",
         "subnet2Ref": "[concat(variables('vnetID'),'/subnets/',parameters('subnet2Name'))]",
 		"subnet3Ref": "[concat(variables('vnetID'),'/subnets/',parameters('subnet3Name'))]",
+		"subnet4Ref": "[concat(variables('vnetID'),'/subnets/',parameters('subnet4Name'))]",
 		"subnet4Ref": "[concat(variables('vnetID'),'/subnets/',parameters('subnet4Name'))]",
 		
         "storageAccountSetupURL": "[concat(parameters('baseUrl'),'/storageAccount-',parameters('storageAccountNewOrExisting'),'.json')]",
