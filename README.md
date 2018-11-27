@@ -1,11 +1,11 @@
-# PaloAlto firewall, automation script to fix deployment in existing Azure Cloud Virtual Network(V-NET)
+# PaloAlto firewall, automation script to fix deployment in existing Azure Cloud Virtual Network(V-NET) with Multi Public interfaces.
 Script by: <a href="https://www.linkedin.com/in/farshadrahaei">Farshad Rahaei</a>
 
 
 
-Use this script to deploy Palo Alto firewall on existing Azure cloud virtual Network(V-NET), with addition of Premium_LRS SSD storage and Standard_DS3_v2 vm size.
+Use this script to deploy Palo Alto firewall on existing Azure cloud virtual Network(V-NET), with addition of Premium_LRS SSD storage and Standard_DS3_v2 vm size and Multi Public interfaces.
 
-In order to use this script you will need to have existing Azure Virtual Network(V-NET) and 3 Subnets for management, untrust and trust security zones.
+In order to use this script you will need to have existing Azure Virtual Network(V-NET) and total 5 Subnets for 1 X management, 3 X untrust and 1 X trust security zones.
 
 Notes:
  - Change azureDeploy.parameters.json with your deployment configuration then update it in Azure "Edit Parameters".
