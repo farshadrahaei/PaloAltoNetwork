@@ -18,7 +18,7 @@ How to use this script:
 
 Click on bellow button to redirect to azure cloud website and use this script for your deployemnt.
 
-[<img src="http://azuredeploy.net/deploybutton.png"/>](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Ffarshadrahaei%2FPaloAltoNetworks%2Fmaster%2FazureDeploy.json)
+[<img src="http://azuredeploy.net/deploybutton.png"/>](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Ffarshadrahaei%2FPaloAltoNetworks%2Fmulti-public-interface%2FazureDeploy.json)
 
 
 
