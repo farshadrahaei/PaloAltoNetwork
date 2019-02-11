@@ -102,7 +102,7 @@
             "metadata": {
                 "artifactsBaseUrl": ""
             },
-            "defaultValue": "https://raw.githubusercontent.com/farshadrahaei/PaloAltoNetworks/multi-public-interface"
+            "defaultValue": "https://raw.githubusercontent.com/farshadrahaei/PaloAltoNetworks/multi-public-interface-v2"
         },
         "vNetNewOrExisting": {
             "type": "string",
@@ -141,14 +141,14 @@
             "type": "string",
             "defaultValue": "Trust",
             "metadata": {
-                "description": "Subnet for the Untrust"
+                "description": "Subnet for the Trust"
             }
         },
         "subnet2Name": {
             "type": "string",
             "defaultValue": "Untrust1",
             "metadata": {
-                "description": "Subnet for the Unrust1"
+                "description": "Subnet for the Untrust1"
             }
         },
 		"subnet3Name": {
@@ -163,6 +163,27 @@
             "defaultValue": "Untrust3",
             "metadata": {
                 "description": "Subnet for the Untrust3"
+            }
+        },
+		"subnet5Name": {
+            "type": "string",
+            "defaultValue": "Untrust4",
+            "metadata": {
+                "description": "Subnet for the Untrust4"
+            }
+        },		
+		"subnet6Name": {
+            "type": "string",
+            "defaultValue": "Untrust5",
+            "metadata": {
+                "description": "Subnet for the Untrust5"
+            }
+        },
+		"subnet7Name": {
+            "type": "string",
+            "defaultValue": "Untrust6",
+            "metadata": {
+                "description": "Subnet for the Untrust6"
             }
         },
         "subnet0Prefix": {
@@ -200,6 +221,27 @@
                 "description": "Untrust3 subnet CIDR"
             }
         },
+		"subnet5Prefix": {
+            "type": "string",
+            "defaultValue": "192.168.5.0/24",
+            "metadata": {
+                "description": "Untrust4 subnet CIDR"
+            }
+        },
+		"subnet6Prefix": {
+            "type": "string",
+            "defaultValue": "192.168.6.0/24",
+            "metadata": {
+                "description": "Untrust5 subnet CIDR"
+            }
+        },
+		"subnet7Prefix": {
+            "type": "string",
+            "defaultValue": "192.168.7.0/24",
+            "metadata": {
+                "description": "Untrust6 subnet CIDR"
+            }
+        },
         "subnet0StartAddress": {
             "type": "string",
             "defaultValue": "192.168.0.4",
@@ -234,6 +276,27 @@
             "metadata": {
                 "description": "Untrust3 subnet start address"
             }
+        },
+		"subnet5StartAddress": {
+            "type": "string",
+            "defaultValue": "192.168.5.4",
+            "metadata": {
+                "description": "Untrust4 subnet start address"
+            }
+        },
+		"subnet6StartAddress": {
+            "type": "string",
+            "defaultValue": "192.168.6.4",
+            "metadata": {
+                "description": "Untrust5 subnet start address"
+            }
+        },
+		"subnet7StartAddress": {
+            "type": "string",
+            "defaultValue": "192.168.7.4",
+            "metadata": {
+                "description": "Untrust6 subnet start address"
+            }
         }
     },
     "variables": {
@@ -248,6 +311,9 @@
         "FWPrivateIPAddressUntrust1": "[parameters('subnet2StartAddress')]",
 		"FWPrivateIPAddressUntrust2": "[parameters('subnet3StartAddress')]",
 	    "FWPrivateIPAddressUntrust3": "[parameters('subnet4StartAddress')]",
+		"FWPrivateIPAddressUntrust4": "[parameters('subnet5StartAddress')]",
+		"FWPrivateIPAddressUntrust5": "[parameters('subnet6StartAddress')]",
+		"FWPrivateIPAddressUntrust6": "[parameters('subnet7StartAddress')]",
         "publicIPAddressType": "Dynamic",
         "vnetID": "[resourceId('Microsoft.Network/virtualNetworks',parameters('virtualNetworkName'))]",
         "nsgname-mgmt": "[concat(parameters('vmName'), '-DefaultNSG')]",
@@ -256,6 +322,9 @@
         "subnet2Ref": "[concat(variables('vnetID'),'/subnets/',parameters('subnet2Name'))]",
 		"subnet3Ref": "[concat(variables('vnetID'),'/subnets/',parameters('subnet3Name'))]",
 		"subnet4Ref": "[concat(variables('vnetID'),'/subnets/',parameters('subnet4Name'))]",
+		"subnet5Ref": "[concat(variables('vnetID'),'/subnets/',parameters('subnet5Name'))]",
+		"subnet6Ref": "[concat(variables('vnetID'),'/subnets/',parameters('subnet6Name'))]",
+		"subnet7Ref": "[concat(variables('vnetID'),'/subnets/',parameters('subnet7Name'))]",
 		
         "storageAccountSetupURL": "[concat(parameters('baseUrl'),'/storageAccount-',parameters('storageAccountNewOrExisting'),'.json')]",
         "vmTemplateUrl": "[concat(parameters('baseUrl'), '/virtual-machine-', parameters('authenticationType'),'.json')]"
@@ -394,10 +463,28 @@
                             "addressPrefix": "[parameters('subnet3Prefix')]"
                         }
                     },
-					 {
+					{
                         "name": "[parameters('subnet4Name')]",
                         "properties": {
                             "addressPrefix": "[parameters('subnet4Prefix')]"
+                        }
+                    },
+					{
+                        "name": "[parameters('subnet5Name')]",
+                        "properties": {
+                            "addressPrefix": "[parameters('subnet5Prefix')]"
+                        }
+                    },
+					{
+                        "name": "[parameters('subnet6Name')]",
+                        "properties": {
+                            "addressPrefix": "[parameters('subnet6Prefix')]"
+                        }
+                    },
+					{
+                        "name": "[parameters('subnet7Name')]",
+                        "properties": {
+                            "addressPrefix": "[parameters('subnet7Prefix')]"
                         }
                     }
                 ]
@@ -416,6 +503,7 @@
                 "displayName": "[concat('NetworkInterfaces', '0')]"
             },
             "properties": {
+			"enableAcceleratedNetworking": true,
                 "ipConfigurations": [
                     {
                         "name": "[concat('ipconfig', '0')]",
@@ -446,6 +534,7 @@
             },
             "properties": {
                 "enableIPForwarding": true,
+				"enableAcceleratedNetworking": true,
                 "ipConfigurations": [
                     {
                         "name": "[concat('ipconfig', '1')]",
@@ -473,6 +562,7 @@
             },
             "properties": {
                 "enableIPForwarding": true,
+				"enableAcceleratedNetworking": true,
                 "ipConfigurations": [
                     {
                         "name": "[concat('ipconfig', '2')]",
@@ -500,6 +590,7 @@
             },
             "properties": {
                 "enableIPForwarding": true,
+				"enableAcceleratedNetworking": true,
                 "ipConfigurations": [
                     {
                         "name": "[concat('ipconfig', '3')]",
@@ -527,6 +618,7 @@
             },
             "properties": {
                 "enableIPForwarding": true,
+				"enableAcceleratedNetworking": true,
                 "ipConfigurations": [
                     {
                         "name": "[concat('ipconfig', '4')]",
@@ -541,6 +633,91 @@
                 ]
             }
         },
+						        {
+            "apiVersion": "[variables('apiVersion')]",
+            "type": "Microsoft.Network/networkInterfaces",
+            "name": "[concat(variables('nicName'), '5')]",
+            "location": "[parameters('location')]",
+            "dependsOn": [
+                "[concat('Microsoft.Network/virtualNetworks/', parameters('virtualNetworkName'))]"
+            ],
+            "tags": {
+                "displayName": "[concat('NetworkInterfaces', '5')]"
+            },
+            "properties": {
+                "enableIPForwarding": true,
+				"enableAcceleratedNetworking": true,
+                "ipConfigurations": [
+                    {
+                        "name": "[concat('ipconfig', '5')]",
+                        "properties": {
+                            "privateIPAllocationMethod": "Static",
+                            "privateIPAddress": "[variables('FWPrivateIPAddressUntrust4')]",
+                            "subnet": {
+                                "id": "[variables(concat('subnet','5','Ref'))]"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+						        {
+            "apiVersion": "[variables('apiVersion')]",
+            "type": "Microsoft.Network/networkInterfaces",
+            "name": "[concat(variables('nicName'), '6')]",
+            "location": "[parameters('location')]",
+            "dependsOn": [
+                "[concat('Microsoft.Network/virtualNetworks/', parameters('virtualNetworkName'))]"
+            ],
+            "tags": {
+                "displayName": "[concat('NetworkInterfaces', '6')]"
+            },
+            "properties": {
+                "enableIPForwarding": true,
+				"enableAcceleratedNetworking": true,
+                "ipConfigurations": [
+                    {
+                        "name": "[concat('ipconfig', '6')]",
+                        "properties": {
+                            "privateIPAllocationMethod": "Static",
+                            "privateIPAddress": "[variables('FWPrivateIPAddressUntrust5')]",
+                            "subnet": {
+                                "id": "[variables(concat('subnet','6','Ref'))]"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+						        {
+            "apiVersion": "[variables('apiVersion')]",
+            "type": "Microsoft.Network/networkInterfaces",
+            "name": "[concat(variables('nicName'), '7')]",
+            "location": "[parameters('location')]",
+            "dependsOn": [
+                "[concat('Microsoft.Network/virtualNetworks/', parameters('virtualNetworkName'))]"
+            ],
+            "tags": {
+                "displayName": "[concat('NetworkInterfaces', '7')]"
+            },
+            "properties": {
+                "enableIPForwarding": true,
+				"enableAcceleratedNetworking": true,
+                "ipConfigurations": [
+                    {
+                        "name": "[concat('ipconfig', '7')]",
+                        "properties": {
+                            "privateIPAllocationMethod": "Static",
+                            "privateIPAddress": "[variables('FWPrivateIPAddressUntrust6')]",
+                            "subnet": {
+                                "id": "[variables(concat('subnet','7','Ref'))]"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+		
         {
             "name": "PAN-VM",
             "type": "Microsoft.Resources/deployments",
@@ -551,7 +728,10 @@
                 "[concat('Microsoft.Network/networkInterfaces/', variables('nicName'), '1')]",
                 "[concat('Microsoft.Network/networkInterfaces/', variables('nicName'), '2')]",
 				"[concat('Microsoft.Network/networkInterfaces/', variables('nicName'), '3')]",
-			    "[concat('Microsoft.Network/networkInterfaces/', variables('nicName'), '4')]"
+			    "[concat('Microsoft.Network/networkInterfaces/', variables('nicName'), '4')]",
+				"[concat('Microsoft.Network/networkInterfaces/', variables('nicName'), '5')]",
+				"[concat('Microsoft.Network/networkInterfaces/', variables('nicName'), '6')]",
+				"[concat('Microsoft.Network/networkInterfaces/', variables('nicName'), '7')]"
             ],
             "properties": {
                 "mode": "Incremental",
